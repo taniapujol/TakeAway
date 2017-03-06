@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+      <meta charset="utf-8">
+      <!--lanzamos la tencion de la vista para mobiles, etc,-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      <title>Formularios en Materialize</title>
+      <!--Importamos Google Icon Font-->
+      <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!--Importamos el estilo materialize.css-->
+      <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+      <link rel="stylesheet" href="css/style_formulario.css">
+      <style>
+        /*______________________________________________________________________*/
+        /*:                                                                     :*/
+        /*:  <nombre>                                       <e-mail>            :*/
+        /*:                                                                     :*/
+        /*:  <area de escriptura para dejar el mensaje>                         :*/
+        /*:  ____________________________________________________________       :*/
+        /*:  :                                                           :      :*/
+        /*:  :                                                           :      :*/
+        /*:  ____________________________________________________________:      :*/
+        /*:                                                                     :*/
+        /*:  <boton(submit)>                                                    :*/
+        /*_______________________________________________________________________*/
+
+      </style>
+    </head>
+    <body>
+    <!-- Inicio del nav -->
+    <nav>
+      <div class="nav-wrapper #ff6f00 amber darken-4">
+      <a href="#" class="brand-logo"><img src="img/logo.png"></a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down ">
+        <li class="despegable">
+          <a href="index.html">Inicio</a>
+          <ul class="submenu">
+            <li><a href="#">Amanides</a></li>
+            <li><a href="#">Principals</a></li>
+            <li><a href="#">Postres</a></li>
+          </ul>
+        </li>
+        <li class="despegable">
+          <a href="info.html">Info</a>
+          <ul class="submenu">
+            <li><a href="#">Qui Som?</a></li>
+            <li><a href="#">Registre</a></li>
+            <li><a href="#">Buscans</a></li>
+          </ul>
+        </li>
+        <li class="despegable">
+          <a href="fotos.html">Fotos</a>
+          <ul class="submenu">
+            <li><a href="#">Amanides</a></li>
+            <li><a href="#">Principals</a></li>
+            <li><a href="#">Postres</a></li>
+          </ul>
+        </li>
+      </ul>
+      </div>
+    </nav>
+    <!--Empezamos el formulario  -->
+      <section id="contacto">
+        <form  id="contactForm" action="php/connecion.php" method="post">
+          <div class="container">
+            <div class="row">
+                <!--creamos la entrada de datos del nombre del usuario-->
+                <div class="input-field col l6 m6 s12">
+                  <i class="material-icons prefix">person_pin</i>
+                  <!--en la etiqueta imput, que es donde el encontramos los atributos:
+                    placeholder (ayuda)
+                    type( tipo de entrada)
+                    name (recoge el valor del escrito) -->
+                  <input placeholder="Nombre y Apellidos" id="nombreApellido" type="text" name="nombre" required="" value="tania">
+                  <label for="nombreApellido">Nombre</label>
+                </div>
+                <!--creamos la entrada de datos del e-mail del usuario-->
+                <div class="input-field col s12 m6 l6">
+                  <i class="material-icons prefix">email</i>
+                  <input id="email" type="email" name="email" required="" value="tania@gmail.com">
+                  <label for="email" data-error="Esta mal escrito">Email</label>
+                </div>
+            </div>
+              <!--creamos la seccion text-area de escriptura de un mensaje-->
+            <div class="row">
+               <div class="input-field col s12">
+                 <textarea id="textarea" class="materialize-textarea" name="textarea"></textarea>
+                 <label for="textarea">Escribe tu mensaje</label>
+               </div>
+            </div>
+            <button class="btn waves-effect waves-light purple lighten-3" type="submit" name="action">Enviar
+              <i class="material-icons right">send</i>
+            </button>
+        </form>
+      </section>
+      <section>
+        <!-- Modal Structure popup-->
+        <div id="modal1" class="modal grey">
+          <div class="modal-content">
+            <h4 style="font-family : fantasy;">Subscribete a nuestra Newsletter</h4>
+            <div class="card-panel">
+              <form class="contacform" method="post" action="php/recibeNewletter.php">
+                <input placeholder="Introduce tu correo y obten un cupon gratuito" type="email" name="email" value="">
+                <label for="email"></label>
+                <button class="btn waves-efect waves-light grey"type="submit" name="action">Suscribete</button>
+              </form>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Cerrar</a>
+          </div>
+        </div>
+      </section>
+      <footer class="page-footer #ff6f00 amber darken-4">
+      <div class="container">
+        <div class="row">
+          <div class="col l6 s12">
+            <h5 class="white-text">Visita la nostra tenda</h5>
+            <p class="grey-text text-lighten-4">Ens trobaras al c/lleida, 35</p>
+            <img class="responsive-img" src="img/tenda.png">
+          </div>
+          <div class="col l4 offset-l2 s12">
+            <h5 class="white-text">Map Site</h5>
+            <ul>
+              <li><a class="grey-text text-lighten-3" href="inicio.html">Inici</a></li>
+              <li><a class="grey-text text-lighten-3" href="fotos.html">Fotos</a></li>
+              <li><a class="grey-text text-lighten-3" href="info.html">Info</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <div class="container">
+          Todos los derechos reservados � 2017 Copyright
+          <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+        </div>
+      </div>
+    </footer>
+      <!--Importamos jQuery desde materialize.js-->
+      <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+      <script type="text/javascript" src="js/materialize.min.js"></script>
+      <script>
+        $(document).ready(function(){
+          $('.modal').modal();
+          $('#modal1').modal('open');
+
+              $("$modal1").modal("close");
+              alert('gracias por suscribirte!')
+            });
+          </script>
+        });
+      </script>
+    </body>
+  </html>
