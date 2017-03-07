@@ -4,7 +4,7 @@ $(document).ready(function() {
     event.preventDefault();
     var debug = true;
     if (debug) console.log("se va enviar el form");
-    
+
     var jsonData = JSON.stringify($("#addCat").serializeArray());
     if (debug) console.log("Datos del json");
     if (debug) console.log(jsonData);
@@ -17,16 +17,16 @@ $(document).ready(function() {
         if (debug) console.log(result.sql);
         if (debug) console.log(result.datos);
         if (result.sql == true) {
-          Materialize.toast('Categoria Creada', 3000, 'rounded') 
+          Materialize.toast('Categoria Creada', 3000, 'rounded')
         }
       },
       error : function(result) {
         if (result.sql == false){
-          Materialize.toast('Error a Categoria Creada', 3000, 'rounded') 
+          Materialize.toast('Error a Categoria Creada', 3000, 'rounded')
         }
       }
     });
   });
 
-    //Fin del script    
+    //Fin del script
     });
