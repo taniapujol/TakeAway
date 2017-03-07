@@ -2,7 +2,7 @@
 // setear el post
 if ($_SERVER['REQUEST_METHOD'] === 'GET') { // verificamos que existe envio POST
 
-	$sql = "SELECT * FROM contac_form";
+	$sql = "SELECT nombre,apellido,email,mensaje,fecha_registro FROM contac_form";
 	$conexion = new mysqli('localhost', 'root', '', 'takeaway');
 	if ($conexion) {
 		$query = $conexion->query($sql);
