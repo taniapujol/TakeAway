@@ -3,10 +3,10 @@
 	padding:0;
 	box-sizing:border-box;
 }
-wrapper {width:90%;}
+
 /*** estilos ensaladas ****/
 #ensaladas .card-reveal{
-	background-color: #fff8e1;
+	background-color: #e1bee7;
 }
 #ensaladas .card-reveal span,#ensaladas .card-reveal p{
 	color: #000;
@@ -31,10 +31,12 @@ wrapper {width:90%;}
 .posicion{
 	position: relative;
 	display: inline-block;
-	left: 220px;
+	left: 200px;
 	bottom: 0;
 	z-index: 20;
 }
+.posicion ul{ right: 45px!important;}
+.posicion ul a{padding-right: 10px;}
 
 h2, li a.btn-floting, nav>a{
 	text-shadow: 5px 5px 5px rgba(150, 150, 150, 2);
@@ -47,12 +49,13 @@ h2, li a.btn-floting, nav>a{
 	width: 100px;
 	position:relative;
 	display:block;
+	background-color: #4a148c;
 }
 .submenu li{
 	float:none;
-	background-color:#ff6f00;
 	border: 2px solid;
-	border-shadow: 2px 2px #ff6f00;}
+	background-color: #4a148c;
+}
 .submenu {
 	position:absolute;
 	z-index:1000;
@@ -60,4 +63,10 @@ h2, li a.btn-floting, nav>a{
 	transition: all .3s ease-in .15s;
 
 }
-nav  .despegable:hover  .submenu{opacity:1;}
+nav .despegable:hover  .submenu{opacity:1;}
+nav .despegable ul li.carrito {
+	display: none!important;
+}
+nav .despegable ul li.carrito i {
+	font-size = 50px;
+}
