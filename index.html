@@ -1,106 +1,132 @@
 <!DOCTYPE html>
 <html>
-	<head>
-	  <meta charset="utf-8">
-	  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-	  <title>Take Away</title>
-	  <link rel="stylesheet" href="css/materialize.min.css">
-	  <link rel="stylesheet" type="text/css" href="css/styles.css">
-	  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-	</head>
-	<body>
-	<!-- Inicio del nav -->
-		<nav>
-		  <div class="nav-wrapper purple darken-4">
-			<a href="#" class="brand-logo"><img src="img/takeaway.png"></a>
-			<ul id="nav-mobile" class="right hide-on-med-and-down ">
-				<li class="despegable">
-					<a href="index.html">Inicio</a>
-					<ul class="submenu">
-						<li><a href="#">Amanides</a></li>
-						<li><a href="#">Principals</a></li>
-						<li><a href="#">Postres</a></li>
-					</ul>
-				</li>
-				<li class="despegable">
-					<a href="info.html">Info</a>
-					<ul class="submenu">
-						<li><a href="#">Qui Som?</a></li>
-						<li><a href="#">Registre</a></li>
-						<li><a href="#">Buscans</a></li>
-					</ul>
-				</li>
-				<li class="despegable">
-					<a href="fotos.html">Fotos</a>
-					<ul class="submenu">
-						<li><a href="#">Amanides</a></li>
-						<li><a href="#">Principals</a></li>
-						<li><a href="#">Postres</a></li>
-					</ul>
-				</li>
-				<li>
-					<a href="#modal1" id="carrito" class="waves-effect waves-light btn"><i class="material-icons">shopping_cart</i></a>
-					<div id="modal2" class="modal">
-						
- 					</div>
-				</li>
-				<li>
-					<a href="#">Sing in </a>
-				</li>
-			</ul>
-		  </div>
-		</nav>
-	<!--Cuerpo de la página-->
-		<!--ensalada-->
-		<section id="ensaladas">
-			<h2 class="black-text center-align  purple lighten-4">Amanidades</h2>
-			<div  id ="ensaladasRow" class="row">
-				<!-- cargamos por javascrip su contenido -->
-			</div>			
-		</section>
-		<!--Principals -->
-		<section id="principales">
-			<h2 class="black-text center-align  purple lighten-3">Principals</h2>
-			<div id="principalesRow" class="row">
-				<!-- cargamos por javascrip su contenido -->
-			</div>
-		</section>
-		<!-- postres -->
-		<section id="postres">
-			<h2 class="black-text center-align  purple lighten-2">Postres</h2>
-			<div id="postresRow" class="row">
-				<!-- cargamos por javascrip su contenido -->
-			</div>
-		</section>
-		<!-- Pie del sitio web -->
-		<footer class="page-footer #ff6f00 purple darken-4">
-			<div class="container">
-				<div class="row">
-					<div class="col l6 s12">
-						<h5 class="white-text">Visita la nostra tenda</h5>
-						<p class="grey-text text-lighten-4">Ens trobaras al c/lleida, 35</p>
-						<img class="responsive-img" src="img/tenda.png">
-					</div>
-					<div class="col l4 offset-l2 s12">
-						<h5 class="white-text">Map Site</h5>
-						<ul>
-							<li><a class="grey-text text-lighten-3" href="inicio.html">Inici</a></li>
-							<li><a class="grey-text text-lighten-3" href="fotos.html">Fotos</a></li>
-							<li><a class="grey-text text-lighten-3" href="info.html">Info</a></li>
-						</ul>
-					</div>
-				</div>
-			</div>
-			<div class="footer-copyright">
-				<div class="container">
-					Todos los derechos reservados � 2017 Copyright
-					<a class="grey-text text-lighten-4 right" href="#!">More Links</a>
-				</div>
-			</div>
-		</footer>
-	<!--Import jQuery before materialize.js-->
-		<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-		<script type="text/javascript" src="js/materialize.min.js"></script>
-		<script type="text/javascript" src="js/cargarIndex.js"></script>
-	</body>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Take Away</title>
+    <link rel="stylesheet" href="css/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Inicio del nav -->
+    <nav>
+        <div class="nav-wrapper purple darken-4">
+            
+            <ul id="nav-mobile" class="left hide-on-med-and-down">
+                <li class="despegable">
+                    <a href="index.html">Inicio</a>
+                    <ul class="submenu">
+                        <li><a href="#">Amanides</a></li>
+                        <li><a href="#">Principals</a></li>
+                        <li><a href="#">Postres</a></li>
+                    </ul>
+                </li>
+                <li class="despegable">
+                    <a href="info.html">Info</a>
+                    <ul class="submenu">
+                        <li><a href="#">Qui Som?</a></li>
+                        <li><a href="#">Registre</a></li>
+                        <li><a href="#">Buscans</a></li>
+                    </ul>
+                </li>
+                <li class="despegable">
+                    <a href="fotos.html">Fotos</a>
+                    <ul class="submenu">
+                        <li><a href="#">Amanides</a></li>
+                        <li><a href="#">Principals</a></li>
+                        <li><a href="#">Postres</a></li>
+                    </ul>
+                </li>
+            </ul>
+              
+        	<a href="#" class="brand-logo" style="width: 25%; margin-left: 17%"><img style="margin: 0 auto," src="img/takeaway.png"></a>
+                
+          	<ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li>
+                    <a href="#">Sing in </a>
+                </li>
+                <li>
+                    <a href="#modal2" id="carrito" class="waves-effect waves-light btn" onclick="pintaCarrito()" style="background-color: transparent;"><i class="material-icons">shopping_cart</i></a>
+                    <div id="modal2" class="modal" style="background-color: #000; color: #FFF;">
+                        <div class="modal-content purple darken-4">
+                            <h4 style="boder-bottom:2px solid #fff">Tu Cesta de la Compra
+                            	<span style="text-align: right; font-size: 12px;" id="totalCantidad">Total de platos :<!-- ${TotalCantidad} --></span>
+                            	<span style="text-align: right; font-size: 12px;" id="totalPrecio">Precio total : <!-- ${TotalPrecio} --></span>
+                            	</h4>
+                            <div style="margin:0 auto">
+                                <span style="margin-right:100px;">Cantidad</span>
+                                <span style="margin-right:100px;">Nombre del Plato</span>
+                                <span style="margin-right:100px;">Precio/unidad</span>
+                                <div style="margin:0 auto;" id="pintaJson">
+                                    <!-- Pinta el contenido que tenemos en localStorage -->
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div class="modal-footer">
+                            <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Cerrar</a>
+                            <a href="#" class=" modal-action modal-close waves-effect waves-green btn-flat">Finalizar</a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!--Cuerpo de la página-->
+    <!--ensalada-->
+    <section id="ensaladas">
+        <h2 class="black-text center-align  purple lighten-4">Amanidades</h2>
+        <div id="ensaladasRow" class="row">
+            <!-- cargamos por javascrip su contenido -->
+        </div>
+    </section>
+    <!--Principals -->
+    <section id="principales">
+        <h2 class="black-text center-align  purple lighten-3">Principals</h2>
+        <div id="principalesRow" class="row">
+            <!-- cargamos por javascrip su contenido -->
+        </div>
+    </section>
+    <!-- postres -->
+    <section id="postres">
+        <h2 class="black-text center-align  purple lighten-2">Postres</h2>
+        <div id="postresRow" class="row">
+            <!-- cargamos por javascrip su contenido -->
+        </div>
+    </section>
+    <!-- Pie del sitio web -->
+    <footer class="page-footer #ff6f00 purple darken-4">
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12">
+                    <h5 class="white-text">Visita la nostra tenda</h5>
+                    <p class="grey-text text-lighten-4">Ens trobaras al c/lleida, 35</p>
+                    <img class="responsive-img" src="img/tenda.png">
+                </div>
+                <div class="col l4 offset-l2 s12">
+                    <h5 class="white-text">Map Site</h5>
+                    <ul>
+                        <li><a class="grey-text text-lighten-3" href="inicio.html">Inici</a></li>
+                        <li><a class="grey-text text-lighten-3" href="fotos.html">Fotos</a></li>
+                        <li><a class="grey-text text-lighten-3" href="info.html">Info</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container">
+                Todos los derechos reservados � 2017 Copyright
+                <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+            </div>
+        </div>
+    </footer>
+    <!--Import jQuery before materialize.js-->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+    <script type="text/javascript" src="js/cargarIndex.js"></script>
+</body>
+
 </html>

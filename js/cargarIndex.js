@@ -90,56 +90,42 @@ function addCarrito(id,cantidad,precio,titulo){
 	// la llamada del localStorage (guardamos los datos en una parte del navegador), su estructura es = localStorage.setItem("nombre_del_espacio",nombre_lo_que_queremos_guardar);
 	localStorage.setItem("JsonCarrito",JsonCarrito);
 	// añadimos a nuestro index en el nav el carrito
-
 };
 // Creamos la funcion pintaCarrito
 function pintaCarrito(){
-	$("#carrito").click(function (){
-		// obtener datos guardados en localStorage
-		var TotalCantidad = 0;
-		var TotalPrecio = 0;
-		var hayCarrito = localStorage.getItem('JsonCarrito');
-		// recoremos el json para obtener las variables
-   		hayCarrito = JSON.parse(hayCarrito);
-   		for (i in hayCarrito){
-   			var nombre = hayCarrito[i].nombre;
-    		var identificador = hayCarrito[i].id;
-    		var cantidad = hayCarrito[i].cantidad;
-    		var precio = hayCarrito[i].precio;
-    		TotalCantidad = TotalCantidad + cantidad;
-    		TotalPrecio = TotalPrecio + precio;
-    		// Mostramos en el modal lo guardado en localStorage
-    		var pintaJson =`
-				<ul>
-					<li>
-						<a>Cantidad</a>
-						<span>${cantidad}</span>
-					</li>
-					<li>
-						<a>Nombre del Plato </a>
-						<span>${nombre}</span>
-					</li>
-					<li>
-						<a>Precio por Racion</a>
-						<span>${precio}</span>
-					</li>
-				</ul>	
-    		`;
-    	};
-		var pintacart =`
-			<div class="modal-content">
-      			<h4>Tu Cesta de la Compra</h4>
-      			<p>${pintaJson}</p>
-    		</div>
-	   		<div class="modal-footer">
-	     		<a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Cerrar</a>
-	     		<a href="#" class=" modal-action modal-close waves-effect waves-green btn-flat">Finalizar</a>
-	   		</div>
-	   		<div>
-	   			<span style="float:left">Total de platos : ${TotalCantidad}</span>
-	   			<span style="float:right">Precio total : ${TotalPrecio}</span>
-
-	   		</div>
-	   		`;
-	   	$("#modal2").append(pintacart);
-	});
+	// obtener datos guardados en localStorage
+	var TotalCantidad = 0;
+	var TotalPrecio = 0;
+	var hayCarrito = localStorage.getItem('JsonCarrito');
+	
+	
+	// recoremos el json para obtener las variables
+	if (hayCarrito != " "){
+		hayCarrito = JSON.parse(hayCarrito);
+		for (i in hayCarrito){
+			var nombre = hayCarrito[i].nombre;
+			var identificador = hayCarrito[i].id;
+			var cantidad = hayCarrito[i].cantidad;
+			var precio = hayCarrito[i].precio;
+			console.log(nombre);
+			console.log(cantidad);
+			console.log(precio);
+			TotalCantidad = TotalCantidad + cantidad;
+			TotalPrecio = TotalPrecio + precio;
+			// Mostramos en el modal lo guardado en localStorage
+			var pintaJson =`
+				
+					<span style="margin:50px;">${cantidad}</span>
+	  				<span style="margin:50px;">${nombre}</span>
+	  				<span style="margin:40px;">${precio}</span><br>
+	  			
+			`;	
+			$("#pintaJson").append(pintaJson);
+		};
+		$("#totalCantidad").append(TotalCantidad);
+		$("#totalPrecio").append(TotalPrecio);  		
+	   	
+	} else {
+		$("#modal2").append("No tienes compras");
+	}
+};
