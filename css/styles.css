@@ -3,7 +3,9 @@
 	padding:0;
 	box-sizing:border-box;
 }
-
+.hidden{
+	display: none;
+}
 /*** estilos ensaladas ****/
 #ensaladas .card-reveal{
 	background-color: #e1bee7;
@@ -41,7 +43,7 @@
 h2, li a.btn-floting, nav>a{
 	text-shadow: 5px 5px 5px rgba(150, 150, 150, 2);
 	background-color:#ffe082;
-	
+
 }
 
 /* menu despegable */
@@ -69,5 +71,5 @@ nav .despegable ul li.carrito {
 	display: none!important;
 }
 nav .despegable ul li.carrito i {
-	font-size = 50px;
+	font-size: 50px;
 }

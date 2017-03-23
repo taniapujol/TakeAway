@@ -1,40 +1,99 @@
 // Declaramos una variable global
-	var carrito = [];
-	var debug = false;
+	var testeo = false;
 // Empieza el jquery de la página
 $(document).ready(function() {
 	// cargamos la funcion modal del materialize
     $('.modal').modal();
     $('#modal1').modal('open');
     $('modal2').modal('open');
-        
-    // Cargamos ajax para obterner las variables nombre, descripcion, precio y categoria llamando a la base de datos por php. 
+
+    // Cargamos ajax para obterner las variables nombre, descripcion, precio y categoria llamando a la base de datos por php.
     $.ajax({
-        url: 'php/ajaxIndex.php',
+        url: 'php/ajaxIndex.php', // llama al php que controlo la base de datos 'platos'.
         type: 'GET',
         dataType: 'json',
         success: function(result) {
-            console.log(result);
+            if (testeo) console.log(result);
             $.each(result.query, function(k, v) {
             	var id = v.id;
-                var nombre = v.nombrePlato;
-                var precio = v.precioRacion;
-                var descripcion = v.descripcion;
-                var foto = v.foto;
-                var activado = v.activado;
-                var categoria = v.id_categoria;
-                pintaCard(id,nombre, precio, descripcion, foto, categoria);
-            });           
+              var nombre = v.nombrePlato;
+              var precio = v.precioRacion;
+              var descripcion = v.descripcion;
+              var foto = v.foto;
+              var activado = v.activado;
+              var categoria = v.id_categoria;
+              pintaCard(id,nombre, precio, descripcion, foto, categoria);
+            });
         },
         error: function(result) {
             alert("errorrrrrr!!!");
         }
     });
-    if (debug) console.log("El total del carrito es :" + carrito);
+		// Cargamos ajax para obterner las variables nombre, foto y fecha llamando a la base de datos por php.
+		$.ajax({
+        url: 'php/ajaxMenu.php', // Llama al php que controla la base de datos 'detalle_menu'
+        type: 'GET',
+        dataType: 'json',
+        success: function(result) {
+						if (testeo) console.log(result);
+						var fechaActual = result.fecha;
+            $.each(result.query, function(k, v) {
+            	var id = v.id;
+              var nombre = v.nombrePlato;
+              var img = v.foto;
+							var fecha = v.fecha;
+							if (fecha === fechaActual){
+								pintaMenu(nombre, img);
+							} else {
+								$("#menu").addClass(hidden);
+							};
+            });
+        },
+        error: function(result) {
+            alert("errorrrrrr!!!");
+        }
+    });
 });
-// creamos la funcion que pintara la cards de nuestro menus principal en la secciones indicadas.
+// creamos la funcion que pintara el menu del dia en la seccion indicada
+function pintaMenu(id,nombre,img) {
+	var nombrePlato = nombre;
+	var foto = img;
+	var card = `
+	<div class="col s12 m12 l12">
+		<div class="card">
+			<div class="card-image waves-effect waves-block waves-light">
+				<img class="activator" src="img/menu.jpg">
+			</div>
+			<div class="card-content">
+				<span class="card-title activator grey-text text-darken-4"><i class="material-icons left">more_vert</i></span>
+				<div class="fixed-action-btn horizontal posicion">
+							<a class="btn-floating amber">
+								<i class="material-icons">shopping_basket</i>
+							</a>
+							<ul>
+								<li><a onclick="addCarrito(${id},1,9,'MenuDiario')" class="btn-floating red">x1</a></li>
+								<li><a onclick="addCarrito(${id},2,9,'MenuDiario')" class="btn-floating yellow darken-1">x2</a></li>
+								<li><a onclick="addCarrito(${id},3,9,'MenuDiario')" class="btn-floating green">x3</a></li>
+								<li><a onclick="addCarrito(${id},4,9,'MenuDiario')" class="btn-floating blue">x4</a></li>
+							</ul>
+						</div>
+			</div>
+			<div class="card-reveal">
+				<span class="card-title grey-text text-darken-4">Menu del Dia<i class="material-icons right">close</i></span>
+				<p>
+					<p><img class="activator" src="img/${foto}">${nombrePlato}</p>
+					<p>${nombrePlato}<img class="activator" src="img/${foto}"></p>
+					<p><img class="activator" src="img/${foto}">${nombrePlato}</p>
+				</p>
+			</div>
+		</div>
+	</div>
+	`;
+	$("#menuRow").append(card);
+}
+// creamos la funcion que pintara las cards de nuestro menus principal en la secciones indicadas.
 function pintaCard(id,titulo, precio, descripcion, img, cat) {
-	
+
     var titulo = titulo;
     var precio = precio;
     var descripcion = descripcion;
@@ -71,7 +130,7 @@ function pintaCard(id,titulo, precio, descripcion, img, cat) {
 		case "2" :
 			$("#ensaladasRow").append(card);
 		break;
-		case "3" : 
+		case "3" :
 			$("#principalesRow").append(card);
 		break;
 		case "4"	:
@@ -82,14 +141,30 @@ function pintaCard(id,titulo, precio, descripcion, img, cat) {
 };
 // Creamos la funcion addCardito
 function addCarrito(id,cantidad,precio,titulo){
-	// añadimos a la variable carrito lo obtenido en nuestra funcion
-	carrito.push({id:id, cantidad:cantidad, precio:precio*cantidad, nombre:titulo});
-	console.log(carrito);
-	// convertimos la variable carrito como json. El json lo transforma en un linea de texto
-	var JsonCarrito = JSON.stringify(carrito);
-	// la llamada del localStorage (guardamos los datos en una parte del navegador), su estructura es = localStorage.setItem("nombre_del_espacio",nombre_lo_que_queremos_guardar);
-	localStorage.setItem("JsonCarrito",JsonCarrito);
-	// añadimos a nuestro index en el nav el carrito
+	var cartExist=localStorage.getItem("JsonCart");
+	var existeProducto=false;
+	if (cartExist!=null){
+		cartExist = JSON.parse(cartExist);
+		if(testeo) console.log("Ya existen productos en el carrito");
+		//buscamos si existe para añadir cantidad
+		for (i in cartExist) {
+				if (id==cartExist[i].id) {
+				//se usa la variable existeProducto para saber si hay un id igual en nuestro json si lo encuentra se pone en true para después comprobar si se añade como nuevo producto al carrito.
+				existeProducto = true;
+				cartExist[i].cantidad = cartExist[i].cantidad + cantidad;
+				}
+		}
+		if (!existeProduct){
+			cartExist.push({id:id,cantidad:cantidad,precio:precio*cantidad,nombre:titulo});
+		}
+	} else {
+	//aqui se controla si es la primera vez que se añaden productos al carrito
+	cartExist=[];
+	carExist.push({id:id,cantidad:cantidad,precio:precio*cantidad,titulo:titulo});
+	}
+	if(testeo) console.log(cartExist);
+	var JsonCart=JSON.stringify(cartExist);
+	localStorage.setItem("JsonCart",JsonCart);
 };
 // Creamos la funcion pintaCarrito
 function pintaCarrito(){
@@ -97,8 +172,8 @@ function pintaCarrito(){
 	var TotalCantidad = 0;
 	var TotalPrecio = 0;
 	var hayCarrito = localStorage.getItem('JsonCarrito');
-	
-	
+
+
 	// recoremos el json para obtener las variables
 	if (hayCarrito != " "){
 		hayCarrito = JSON.parse(hayCarrito);
@@ -114,18 +189,15 @@ function pintaCarrito(){
 			TotalPrecio = TotalPrecio + precio;
 			// Mostramos en el modal lo guardado en localStorage
 			var pintaJson =`
-				
-					<span style="margin:50px;">${cantidad}</span>
-	  				<span style="margin:50px;">${nombre}</span>
-	  				<span style="margin:40px;">${precio}</span><br>
-	  			
-			`;	
+				<span style="margin:50px;">${cantidad}</span>
+				<span style="margin:50px;">${nombre}</span>
+				<span style="margin:40px;">${precio}</span><br>
+			`;
 			$("#pintaJson").append(pintaJson);
 		};
 		$("#totalCantidad").append(TotalCantidad);
-		$("#totalPrecio").append(TotalPrecio);  		
-	   	
+		$("#totalPrecio").append(TotalPrecio);
 	} else {
-		$("#modal2").append("No tienes compras");
+		$("#modal2").html("No tienes compras");
 	}
 };

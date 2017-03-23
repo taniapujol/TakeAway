@@ -1,12 +1,12 @@
 $(document).ready(function() {
-	var debug = true;
+	var testeo = true;
    
 	    $.ajax({
 	    	url: '../php/getListPedido.php',
 	    	type: 'GET',
 	    	dataType: 'json',
 	    	success: function(result){
-	    		if (debug) console.log(result.query);
+	    		if (testeo) console.log(result.query);
 	    		var tbl_body = "";
 	    		
 	    		$.each(result.query, function(index, val) {
