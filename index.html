@@ -14,7 +14,9 @@
     <!-- Inicio del nav -->
     <nav>
         <div id="nav-mobile" class="nav-wrapper purple darken-4">
-          <ul class="left hide-on-med-and-down">
+            <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+            <!-- cargando menu izquierdo (Inicio, Info, Fotos) -->
+            <ul class="left hide-on-med-and-down">
                 <li class="despegable">
                     <a href="index.html">Inicio</a>
                     <ul class="submenu">
@@ -25,60 +27,46 @@
                 </li>
                 <li class="despegable">
                     <a href="info.html">Info</a>
-                    <ul class="submenu">
-                        <li><a href="#">Qui Som?</a></li>
-                        <li><a href="#">Registre</a></li>
-                        <li><a href="#">Buscans</a></li>
-                    </ul>
                 </li>
                 <li class="despegable">
                     <a href="fotos.html">Fotos</a>
-                    <ul class="submenu">
-                        <li><a href="#">Amanides</a></li>
-                        <li><a href="#">Principals</a></li>
-                        <li><a href="#">Postres</a></li>
-                    </ul>
+                </li>
+                <li >
+                    <a href="Contacto.html">Contacto</a>
                 </li>
             </ul>
-          <!-- Cargando el logo en el centro de la página  -->
-        	<a href="#" class="brand-logo" style="width: 25%; margin-left: 17%"><img style="margin: 0 auto," src="img/takeaway.png"></a>
-        	<ul class="right hide-on-med-and-down">
-            <li>
-              <a href="#"> Sing in </a>
-            </li>
-            <li>
-              <a style="posicion:absoluta; background-color:#fff; top:0; right= 0;"></a>
-              <a href="#modal2" id="carrito" class="waves-effect waves-light btn" onclick="pintaCarrito()" style="background-color: transparent;"><i class="material-icons">shopping_cart</i></a>
-              <div id="modal2" class="modal" style="background-color: #000; color: #FFF;">
-                <div class="modal-content purple darken-4">
-                  <h4 style="boder-bottom:2px solid #fff">Tu Cesta de la Compra
-                  	<span style="text-align: right; font-size: 12px;" id="totalCantidad">Total de platos :<!-- ${TotalCantidad} --></span>
-                  	<span style="text-align: right; font-size: 12px;" id="totalPrecio">Precio total : <!-- ${TotalPrecio} --></span>
-                	</h4>
-                  <div style="margin:0 auto">
-                    <span style="margin-right:100px;">Cantidad</span>
-                    <span style="margin-right:100px;">Nombre del Plato</span>
-                    <span style="margin-right:100px;">Precio/unidad</span>
-                    <div style="margin:0 auto;" id="pintaJson">
-                    <!-- Pinta el contenido que tenemos en localStorage -->
+            <!-- Cargando el logo en el centro de la página  -->
+            <a href="#" class="brand-logo center"><img src="img/takeaway.png"></a>
+            <!-- Cargando el menu izquierdo (sing in, carrito) -->
+            <ul class="right hide-on-med-and-down">
+                <li>
+                    <a href="#"> Sing in </a>
+                </li>
+                <li>
+                    <a style="position:absolute; color:#fff; top:0; right= 0; z-index: 1000;">
+                ( <span id="hayproducto">0</span> )
+              </a>
+                    <a href="#modal2" id="carrito" class="waves-effect waves-light btn" onclick="pintaCarrito()" style="background-color: transparent;"><i class="material-icons">shopping_cart</i></a>
+                    <div id="modal2" class="modal" style="background-color: #000; color: #FFF;">
                     </div>
-                  </div>
-                </div>
-                <div class="modal-footer">
-                  <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Cerrar</a>
-                  <a href="#" class=" modal-action modal-close waves-effect waves-green btn-flat">Finalizar</a>
-                </div>
-              </div>
-            </li>
-          </ul>
+                </li>
+            </ul>
+            <ul class="side-nav" id="mobile-demo">
+                <li><a href="#" title="Inicio"><i class="large material-icons">home</i></a></li>
+                <li><a href="#" title="Info"><i class="large material-icons">info</i></a></li>
+                <li><a href="#" title="Fotos"><i class="large material-icons">view_carousel</i></a></li>
+                <li><a href="#" title="Contacto"><i class="large material-icons">contacts</i></a></li>
+                <li><a href="#" title="Sing In"><i class="large material-icons">personal_pin</i></a></li>
+                <li><a href="#" title="Cart"><i class="large material-icons">shopping_cart</i></a></li>
+            </ul>
         </div>
     </nav>
     <!--Cuerpo de la página-->
     <section id="menu" class="purple darken-4">
-      <h1 class="white-text center-align">Menu Diario solo por 9€</h1>
-      <div id="menuRow" class="row">
-      <!-- cargamos por javascrip su contenido -->
-      </div>
+        <h1 class="white-text center-align">Menu Diario solo por 9€</h1>
+        <div id="menuRow" class="row">
+            <!-- cargamos por javascrip su contenido -->
+        </div>
     </section>
     <!--ensalada-->
     <section id="ensaladas">

@@ -6,7 +6,12 @@ $(document).ready(function() {
     $('.modal').modal();
     $('#modal1').modal('open');
     $('modal2').modal('open');
-
+    $(".button-collapse").sideNav({
+      menuWidth: 100, // Default is 300
+      edge: 'left', // Choose the horizontal origin
+      closeOnClick: true, // Closes side-nav on <a> clicks, useful for Angular/Meteor
+      draggable: true // Choose whether you can drag to open on touch screens
+    });
     // Cargamos ajax para obterner las variables nombre, descripcion, precio y categoria llamando a la base de datos por php.
     $.ajax({
         url: 'php/ajaxIndex.php', // llama al php que controlo la base de datos 'platos'.
@@ -29,30 +34,31 @@ $(document).ready(function() {
             alert("errorrrrrr!!!");
         }
     });
-		// Cargamos ajax para obterner las variables nombre, foto y fecha llamando a la base de datos por php.
-		$.ajax({
-        url: 'php/ajaxMenu.php', // Llama al php que controla la base de datos 'detalle_menu'
-        type: 'GET',
-        dataType: 'json',
-        success: function(result) {
-						if (testeo) console.log(result);
-						var fechaActual = result.fecha;
-            $.each(result.query, function(k, v) {
-            	var id = v.id;
-              var nombre = v.nombrePlato;
-              var img = v.foto;
-							var fecha = v.fecha;
-							if (fecha === fechaActual){
-								pintaMenu(nombre, img);
-							} else {
-								$("#menu").addClass(hidden);
-							};
-            });
-        },
-        error: function(result) {
-            alert("errorrrrrr!!!");
-        }
-    });
+	// Cargamos ajax para obterner las variables nombre, foto y fecha llamando a la base de datos por php.
+	// $.ajax({
+	//     url: 'php/ajaxMenu.php', // Llama al php que controla la base de datos 'detalle_menu'
+	//     type: 'GET',
+	//     dataType: 'json',
+	//     success: function(result) {
+	// 					if (testeo) console.log(result);
+	// 					var fechaActual = result.fecha;
+	//         $.each(result.query, function(k, v) {
+	//         	var id = v.id;
+	//           var nombre = v.nombrePlato;
+	//           var img = v.foto;
+	// 						var fecha = v.fecha;
+	// 						if (fecha === fechaActual){
+	// 							pintaMenu(nombre, img);
+	// 						} else {
+	// 							$("#menu").addClass(hidden);
+	// 						};
+	//         });
+	//     },
+	//     error: function(result) {
+	//         alert("errorrrrrr!!!");
+	//     }
+	// });
+// Fin de document.ready
 });
 // creamos la funcion que pintara el menu del dia en la seccion indicada
 function pintaMenu(id,nombre,img) {
@@ -99,7 +105,7 @@ function pintaCard(id,titulo, precio, descripcion, img, cat) {
     var descripcion = descripcion;
     var img = img;
 	var card = `
-		<div class="col s6 m4 l3">
+		<div class="col s12 m4 l3">
 			<div class="card">
 				<div class="card-image waves-effect waves-block waves-light">
 					<img class="activator" src="img/${img}">
@@ -160,44 +166,45 @@ function addCarrito(id,cantidad,precio,titulo){
 	} else {
 	//aqui se controla si es la primera vez que se añaden productos al carrito
 	cartExist=[];
-	carExist.push({id:id,cantidad:cantidad,precio:precio*cantidad,titulo:titulo});
+	cartExist.push({id:id,cantidad:cantidad,precio:precio*cantidad,titulo:titulo});
 	}
 	if(testeo) console.log(cartExist);
 	var JsonCart=JSON.stringify(cartExist);
 	localStorage.setItem("JsonCart",JsonCart);
 };
-// Creamos la funcion pintaCarrito
-function pintaCarrito(){
-	// obtener datos guardados en localStorage
-	var TotalCantidad = 0;
-	var TotalPrecio = 0;
-	var hayCarrito = localStorage.getItem('JsonCarrito');
-
-
-	// recoremos el json para obtener las variables
-	if (hayCarrito != " "){
-		hayCarrito = JSON.parse(hayCarrito);
-		for (i in hayCarrito){
-			var nombre = hayCarrito[i].nombre;
-			var identificador = hayCarrito[i].id;
-			var cantidad = hayCarrito[i].cantidad;
-			var precio = hayCarrito[i].precio;
-			console.log(nombre);
-			console.log(cantidad);
-			console.log(precio);
-			TotalCantidad = TotalCantidad + cantidad;
-			TotalPrecio = TotalPrecio + precio;
-			// Mostramos en el modal lo guardado en localStorage
-			var pintaJson =`
-				<span style="margin:50px;">${cantidad}</span>
-				<span style="margin:50px;">${nombre}</span>
-				<span style="margin:40px;">${precio}</span><br>
-			`;
-			$("#pintaJson").append(pintaJson);
-		};
-		$("#totalCantidad").append(TotalCantidad);
-		$("#totalPrecio").append(TotalPrecio);
-	} else {
-		$("#modal2").html("No tienes compras");
-	}
-};
+// // Creamos la funcion pintaCarrito
+// function pintaCarrito(){
+// 	// obtener datos guardados en localStorage
+// 	var TotalCantidad = 0;
+// 	var TotalPrecio = 0;
+// 	var hayCarrito = localStorage.getItem('JsonCarrito');
+// 	// recoremos el json para obtener las variables
+// 	if (hayCarrito != " "){
+// 		hayCarrito = JSON.parse(hayCarrito);
+// 		for (i in hayCarrito){
+// 			var nombre = hayCarrito[i].nombre;
+// 			var identificador = hayCarrito[i].id;
+// 			var cantidad = hayCarrito[i].cantidad;
+// 			var precio = hayCarrito[i].precio;
+// 			console.log(nombre);
+// 			console.log(cantidad);
+// 			console.log(precio);
+// 			TotalCantidad = TotalCantidad + cantidad;
+// 			TotalPrecio = TotalPrecio + precio;
+// 			listado += '<tr><td><i class="material-icons right icono" onClick="eliminarplatocarrito('+i+');">delete</i></td><td>''</td><td class="center-align"><i class="material-icons right icono" onClick="sumaruno('+i+');">arrow_drop_up</i>'+cantidad+'<i class="material-icons right icono" onClick="restaruno('+i+');">arrow_drop_down</i></td><td class="right-align">'+precio+'</td><td class="right-align">'+subtotal.toFixed(2) +'</td></tr>';
+// 			// Mostramos en el modal lo guardado en localStorage
+// 			var pintaJson =`
+// 				<span style="margin:50px;">${cantidad}</span>
+// 				<span style="margin:50px;">${nombre}</span>
+// 				<span style="margin:40px;">${precio}</span><br>
+// 			`;
+// 			$("#pintaJson").append(pintaJson);
+// 		};
+// 		$("#hayproducto").html(TotalCantidad);
+// 		$("#totalCantidad").append(TotalCantidad);
+// 		$("#totalPrecio").append(TotalPrecio);
+// 	} else {
+// 		$("#modal2").remove('#compra');
+// 		$("#modal2").text("tu compra esta bacia")
+// 	}
+// };
