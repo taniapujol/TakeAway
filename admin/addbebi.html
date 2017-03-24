@@ -15,57 +15,41 @@
     <!-- Empezamos a crear el back office de la p�gina -->
       <div id="container">
         <div class="row">
-          <div class="col">
-            <h2 class="center">Formulario de creacion de platos</h2>
+          <div class="col s12">
+            <h2 class="center">Formulario de creacion de bebidas</h2>
             <a class="left" href="lacueva.html"><i class="medium material-icons">web</i></a>
           </div>
         </div>
         <!-- Incluir enctype=�multipart/form-data� para que nos deje subir la imagen al servidor. -->
-        <form  id="addPlato" method="post" enctype="multipart/form-data">
+        <form  id="addBebida" method="post" enctype="multipart/form-data">
           <div class="container" style="margin:50px auto;">
-            <!--creamos el campo nombre del plato-->
-            <div class="row">
-              <div class="input-field col l12 m12 s12">
-                <input placeholder="Nombre del Plato" id="nombrePlato" type="text" name="nombrePlato">
-                <label for="nombre">Plato</label>
-              </div>
-            </div>
-            <!--creamos el campo de descripcion del producto-->
+            <!--creamos el campo nombre de la bebida-->
             <div class="row">
               <div class="input-field col s12">
-                <i class="material-icons prefix">mode_edit</i>
-                <textarea id="textarea" class="materialize-textarea" name="descripcion"></textarea>
-                <label for="textarea">Decripcion de la categoria</label>
+                <input id="nombreBebida" type="text" name="nombreBebida">
+                <label for="nombreBebida">Bebida</label>
               </div>
             </div>
             <!-- creamos el campo subida de imagen -->
             <div class="row">
-              <div class="file-field input-field">
+              <div class="file-field input-field col s12">
                 <div class="btn waves-effect waves-light grey">
                   <span>Archivo</span>
                   <input type="file" id="imagen" sixe="30" name="foto">
                 </div>
                 <div class="file-path-wrapper">
-                  <input class="file-path validate">
+                  <input class="file-path validate" sixe="30" name="foto">
                 </div>
               </div>
             </div>
             <!-- creamos el campo activar producto -->
             <div class="row">
-              <div class="switch col l4 m4 s12">
-                <label>
-                  Off
-                  <input type="checkbox" name="activado">
-                  <span class="lever"></span>
-                  On
-                </label>
-              </div>
-              <div class="input-field col l4 m4 s12">
+              <div class="input-field col l6 m6 s12">
                 <!--creamos el campo precio-->
-                <input id="precio" type="number" step="any" name="precioRacion" required="">
+                <input id="precio" type="number" step="any" name="precio" required="">
                 <label for="precio">Precio</label>
               </div>
-              <div class="input-field col l4 m4 s12">
+              <div class="input-field col l6 m6 s12">
                 <select id="listado" name="id_categoria">
                   <option value="" disabled selected>Elige una opcion</option>
                 </select>
@@ -75,7 +59,7 @@
             <button class="btn waves-effect waves-light grey" type="submit" name="action">Enviar
               <i class="material-icons right">send</i>
             </button>
-            <button class="btn waves-effect waves-light grey" type="button" name="nuevaEntrada" onclick="window.location.reload()" style="margin-right: 20px;"><i class="material-icons right">mode_edit</i> Nuevo Plato
+            <button class="btn waves-effect waves-light grey" type="button" name="nuevaEntrada" onclick="window.location.reload()" style="margin-right: 20px;"><i class="material-icons right">mode_edit</i> Nueva Bebida
             </button>
           </div>
         </form>
@@ -86,6 +70,6 @@
               integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
               crossorigin="anonymous"></script>
 		  <script type="text/javascript" src="../js/Materialize/materialize.min.js"></script>
-      <script type="text/javascript" src="../js/lacueva/addplato.js"></script>
+      <script type="text/javascript" src="../js/lacueva/addbebidas.js"></script>
     </body>
   </html>

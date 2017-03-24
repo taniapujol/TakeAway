@@ -29,34 +29,27 @@
 
 <body>
     <!-- Inicio del nav -->
-    <nav>
-        <div id="nav-mobile colap" class="nav-wrapper purple darken-4">
+   <nav>
+        <div id="nav-mobile" class="nav-wrapper purple darken-4">
+            <!--boton para vista mobil -->
             <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-            <!-- cargando menu izquierdo (Inicio, Info, Fotos) -->
+            <!-- cargando menu izquierdo (Inicio, Info, Contacto) -->
             <ul class="left hide-on-med-and-down">
                 <li class="despegable">
                     <a href="index.html">Inicio</a>
                     <ul class="submenu">
-                        <li><a href="#">Amanides</a></li>
-                        <li><a href="#">Principals</a></li>
-                        <li><a href="#">Postres</a></li>
+                        <li><a href="#menu">Menu</a></li>
+                        <li><a href="#ensaladas">Ensaladas</a></li>
+                        <li><a href="#principales">Principales</a></li>
+                        <li><a href="#postres">Postres</a></li>
+                        <li><a href="#bebidas">Bebidas</a></li>
                     </ul>
                 </li>
-                <li class="despegable">
+                <li>
                     <a href="info.html">Info</a>
-                    <ul class="submenu">
-                        <li><a href="#">Qui Som?</a></li>
-                        <li><a href="#">Registre</a></li>
-                        <li><a href="#">Buscans</a></li>
-                    </ul>
                 </li>
-                <li class="despegable">
-                    <a href="fotos.html">Fotos</a>
-                    <ul class="submenu">
-                        <li><a href="#">Amanides</a></li>
-                        <li><a href="#">Principals</a></li>
-                        <li><a href="#">Postres</a></li>
-                    </ul>
+                <li >
+                    <a href="Contacto.html">Contacto</a>
                 </li>
             </ul>
             <!-- Cargando el logo en el centro de la página  -->
@@ -75,13 +68,13 @@
                     </div>
                 </li>
             </ul>
+            <!--menu para mobiles -->
             <ul class="side-nav" id="mobile-demo">
-                <li><a href="#">Inicio</a></li>
-                <li><a href="#">Info</a></li>
-                <li><a href="#">Fotos</a></li>
-                <li><a href="#">contacto</a></li>
-                <li><a href="#">Sing in</a></li>
-                <li><a href="#">Cesta</a></li>
+                <li><a href="#" title="Inicio"><i class="large material-icons">home</i></a></li>
+                <li><a href="#" title="Info"><i class="large material-icons">info</i></a></li>
+                <li><a href="#" title="Contacto"><i class="large material-icons">contacts</i></a></li>
+                <li><a href="#" title="Sing In"><i class="large material-icons">personal_pin</i></a></li>
+                <li><a href="#" title="Cart"><i class="large material-icons">shopping_cart</i></a></li>
             </ul>
         </div>
     </nav>
