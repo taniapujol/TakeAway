@@ -4,8 +4,8 @@
       <meta charset="UTF-8">
       <!--Let browser know website is optimized for mobile-->
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-      <!--Import Google Icon Font-->
       <title>TAKEAWAY</title>
+      <!--Import Google Icon Font-->
       <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
       <!--Import materialize.css-->
       <link type="text/css" rel="stylesheet" href="../css/materialize.min.css"  media="screen,projection"/>
@@ -13,37 +13,38 @@
     </head>
     <body>
     <!-- Empezamos a crear el back office de la p�gina -->
-      <div id="container">
+	    <div id="container">
         <div class="row">
           <div class="col l12 m12 s12">
-            <h2 class="center">Formulario de Pedidos Realizados</h2>
+            <h2 class="center">Formulario de Bebidas obtenidas</h2>
             <a class="left" href="lacueva.html"><i class="medium material-icons">web</i></a>
             <a id="actualiza" class="right" onclick="window.location.reload()">
-              <i class=" medium material-icons right">loop</i>
+              <i class="medium material-icons right">loop</i>
             </a>
           </div>
         </div>
-        <div class="tabla">
-        <!-- crearemos una tabla incrementada a partir de jquery, donde le js creara una fila (row-'td') y tendro de cada fila sus respectivas columnas de (date, nombre, email y mensage) -->
+      <div class="tabla">
+          <!-- crearemos una tabla incrementada a partir de jquery, donde le js creara una fila (row-'td') y tendro de cada fila sus respectivas columnas de (date, nombre, email y mensage) -->
           <table id="listado">
             <thead>
               <tr>
-                <th>Cliente</th>
-                <th>Plato</th>
-                <th>Cantidad</th>
-                <th>Precio Unitario</th>
+                <th>ID</th>
+                <th>Nombre de la Bebida</th>
+                <th>Precio</th>
+                <th>Fotografia</th>
+                <th>Activado</th>
+                <th>ID_Categoria</th>
               </tr>
             </thead>
             <tbody></tbody>
           </table>
-        </div>
+       </div>
       </div>
-
   	<!--Import jQuery before materialize.js-->
 		  <script src="https://code.jquery.com/jquery-3.1.1.js"
               integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
               crossorigin="anonymous"></script>
 		  <script type="text/javascript" src="../js/Materialize/materialize.min.js"></script>
-      <script type="text/javascript" src="../js/lacueva/listadoPedidos.js"></script>
+      <script type="text/javascript" src="../js/lacueva/listPlato.js"></script>
     </body>
   </html>

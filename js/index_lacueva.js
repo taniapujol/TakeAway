@@ -6,7 +6,7 @@ $(document).ready(function() {
     var password = document.getElementById("password").value;
     if ( username == "Jefe01" && password == "jefe"){
       alert ("Login successfully");
-      window.location = "../lacueva/lacueva.html"; // Redirecting to other page.
+      window.location = "../admin/lacueva.html"; // Redirecting to other page.
       return false;
     } else{
       attempt --;// Decrementa la varialbe attempt en 1.

@@ -1,12 +1,13 @@
 <!DOCTYPE html>
-<<<<<<< HEAD
 <html>
 
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Take Away</title>
     <link rel="stylesheet" href="css/materialize.min.css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="css/styles.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
@@ -15,369 +16,111 @@
     <!-- Inicio del nav -->
     <nav>
         <div id="nav-mobile" class="nav-wrapper purple darken-4">
-          <ul class="left hide-on-med-and-down">
+            <!--boton para vista mobil -->
+            <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+            <!-- cargando menu izquierdo (Inicio, Info, Contacto) -->
+            <ul class="left hide-on-med-and-down">
                 <li class="despegable">
                     <a href="index.html">Inicio</a>
                     <ul class="submenu">
-                        <li><a href="#">Amanides</a></li>
-                        <li><a href="#">Principals</a></li>
-                        <li><a href="#">Postres</a></li>
+                        <li><a href="#menu">Menu</a></li>
+                        <li><a href="#ensaladas">Ensaladas</a></li>
+                        <li><a href="#principales">Principales</a></li>
+                        <li><a href="#postres">Postres</a></li>
+                        <li><a href="#bebidas">Bebidas</a></li>
                     </ul>
                 </li>
-                <li class="despegable">
+                <li>
                     <a href="info.html">Info</a>
-                    <ul class="submenu">
-                        <li><a href="#">Qui Som?</a></li>
-                        <li><a href="#">Registre</a></li>
-                        <li><a href="#">Buscans</a></li>
-                    </ul>
                 </li>
-                <li class="despegable">
-                    <a href="fotos.html">Fotos</a>
-                    <ul class="submenu">
-                        <li><a href="#">Amanides</a></li>
-                        <li><a href="#">Principals</a></li>
-                        <li><a href="#">Postres</a></li>
-                    </ul>
+                <li >
+                    <a href="Contacto.html">Contacto</a>
                 </li>
             </ul>
-          <!-- Cargando el logo en el centro de la pÃ¡gina  -->
-        	<a href="#" class="brand-logo" style="width: 25%; margin-left: 17%"><img style="margin: 0 auto," src="img/takeaway.png"></a>
-        	<ul class="right hide-on-med-and-down">
-            <li>
-              <a href="#"> Sing in </a>
-            </li>
-            <li>
-              <a style="posicion:absoluta; background-color:#fff; top:0; right= 0;"></a>
-              <a href="#modal2" id="carrito" class="waves-effect waves-light btn" onclick="pintaCarrito()" style="background-color: transparent;"><i class="material-icons">shopping_cart</i></a>
-              <div id="modal2" class="modal" style="background-color: #000; color: #FFF;">
-                <div class="modal-content purple darken-4">
-                  <h4 style="boder-bottom:2px solid #fff">Tu Cesta de la Compra
-                  	<span style="text-align: right; font-size: 12px;" id="totalCantidad">Total de platos :<!-- ${TotalCantidad} --></span>
-                  	<span style="text-align: right; font-size: 12px;" id="totalPrecio">Precio total : <!-- ${TotalPrecio} --></span>
-                	</h4>
-                  <div style="margin:0 auto">
-                    <span style="margin-right:100px;">Cantidad</span>
-                    <span style="margin-right:100px;">Nombre del Plato</span>
-                    <span style="margin-right:100px;">Precio/unidad</span>
-                    <div style="margin:0 auto;" id="pintaJson">
-                    <!-- Pinta el contenido que tenemos en localStorage -->
+            <!-- Cargando el logo en el centro de la pÃ¡gina  -->
+            <a href="#" class="brand-logo center"><img src="img/takeaway.png"></a>
+            <!-- Cargando el menu izquierdo (sing in, carrito) -->
+            <ul class="right hide-on-med-and-down">
+                <li>
+                    <a href="#"> Sing in </a>
+                </li>
+                <li>
+                    <a style="position:absolute; color:#fff; top:0; right= 0; z-index: 1000;">
+                ( <span id="hayproducto">0</span> )
+              </a>
+                    <a href="#modal2" id="carrito" class="waves-effect waves-light btn" onclick="pintaCarrito()" style="background-color: transparent;"><i class="material-icons">shopping_cart</i></a>
+                    <div id="modal2" class="modal" style="background-color: #000; color: #FFF;">
                     </div>
-                  </div>
-                </div>
-                <div class="modal-footer">
-                  <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Cerrar</a>
-                  <a href="#" class=" modal-action modal-close waves-effect waves-green btn-flat">Finalizar</a>
-                </div>
-=======
-  <html>
-    <head>
-      <!--Import Google Icon Font-->
-      <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-      <!--Import materialize.css-->
-      <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
-	  <link type="text/cas" rel="stylesheet" href="css/styles.css" media="screen,projection"/>
-      <!--Let browser know website is optimized for mobile-->
-      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    </head>
-
-    <body>
-		<!--Import jQuery before materialize.js-->
-		<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-		<script type="text/javascript" src="js/materialize.min.js"></script>
-		<!-- Empezamos con el cuerpo de la página -->
-		<!-- barra de navegación del sitio -->
-		<nav>
-			<div class="nav-wrapper #ff6f00 amber darken-4">
-				<a href="inicio.html" class="brand-logo"><img class="responsive-img circle" src="img/logo.png"></a>
-				<ul id="nav-mobile" class="right hide-on-med-and-down">
-					<li><a href="inicio.html">Inicio</a></li>
-					<li><a href="info.html">info</a></li>
-					<li><a href="fotos.html">Fotos</a></li>
-				</ul>
-			</div>
-		</nav>
-		<!-- Empezamos la secciones -->
-		<ul class="collapsible" data-collapsible="accordion">
-		  <li>
-			<div class="collapsible-header amber"><span class="new badge">4</span><h2>Ensaladas</h2></div>
-			<div class="collapsible-body amber lighten-5">
-				<!-- Ensaladas -->
-				<div class="row">
-					<div class="col s12 l3">
-						<div class="card">
-							<div class="card-image waves-effect waves-block waves-light">
-							  <img class="activator" src="img/amanida_arros.jpg">
-							</div>
-							<div class="card-content">
-							  <span class="card-title activator grey-text text-darken-4">Amanida de Arrós<i class="material-icons right">OBRE</i></span>
-							  <p><a href="#">Cistella</a></p>
-							</div>
-							<div class="card-reveal">
-							  <span class="card-title grey-text text-darken-4">Amanida de Arrós<i class="material-icons right">TANCA</i></span>
-							  <p>Deliciosa i refrescant amanida d’arròs, on afegim uns dauets de pernil dolç i verduretes que equilibren el plat.</p>
-							</div>
-						</div>
-					</div>
-					<div class="col s12 l3">
-						<div class="card">
-							<div class="card-image waves-effect waves-block waves-light">
-							  <img class="activator" src="img/amanida_campestre.jpg">
-							</div>
-							<div class="card-content">
-							  <span class="card-title activator grey-text text-darken-4">Amanida Campestre<i class="material-icons right">OBRE</i></span>
-							  <p><a href="#">Cistella</a></p>
-							</div>
-							<div class="card-reveal">
-							  <span class="card-title grey-text text-darken-4">Amanida Campestre<i class="material-icons right">TANCA</i></span>
-							  <p>Deliciosa combinació gracies a la base vegetal, rica en vitamines, al pernil dolç i al formatge, que aporten proteïnes i calci al plat. El toc dolç del blat de moro i les pastanagues li donen un gust agradable en boca.</p>
-							</div>
-						</div>
-					</div>
-					<div class="col s12 l3">
-						<div class="card">
-							<div class="card-image waves-effect waves-block waves-light">
-							  <img class="activator" src="img/amanida_pasta.jpg">
-							</div>
-							<div class="card-content">
-							  <span class="card-title activator grey-text text-darken-4">Amanida de Pasta<i class="material-icons right">OBRE</i></span>
-							  <p><a href="#">Cistella</a></p>
-							</div>
-							<div class="card-reveal">
-							  <span class="card-title grey-text text-darken-4">Amanida de Pasta<i class="material-icons right">TANCA</i></span>
-							  <p>Amanida fresca amb la base de pasta Fusilli, juntament amb la tonyina i les hortalisses formen un plat complet. Acompanyat amb maionesa.</p>
-							</div>
-						</div>
-					</div>
-					<div class="col s12 l3">
-						<div class="card">
-							<div class="card-image waves-effect waves-block waves-light">
-							  <img class="activator" src="img/amanida_cesar.jpg">
-							</div>
-							<div class="card-content">
-							  <span class="card-title activator grey-text text-darken-4">Amanida Cesar<i class="material-icons right">OBRE</i></span>
-							  <p><a href="#">Cistella</a></p>
-							</div>
-							<div class="card-reveal">
-							  <span class="card-title grey-text text-darken-4">Amanida Cesar<i class="material-icons right">TANCA</i></span>
-							  <p>Has tastat ja la nostra amanida clàssica? Amb base vegetal rica en vitamines, pollastre arrebossat cruixent i formatge que ens ofereix una bona font de calci.</p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		  </li>
-		  <li>
-			<div class="collapsible-header green"><span class="badge"></span><h2>Principals</h2></div>
-			<div class="collapsible-body green lighten-4">
-			<!-- Principales -->
-				<div class="row">
-					<div class="col s12 l3">
-						<div class="card">
-							<div class="card-image waves-effect waves-block waves-light">
-							  <img class="activator" src="img/bacalla_romescu.jpg">
-							</div>
-							<div class="card-content">
-							  <span class="card-title activator grey-text text-darken-4">Bacalla al Romescu<i class="material-icons right">OBRE</i></span>
-							  <p><a href="#">Cistella</a></p>
-							</div>
-							<div class="card-reveal">
-							  <span class="card-title grey-text text-darken-4">Bacalla al Romescu<i class="material-icons right">TANCA</i></span>
-							  <p>Delicios plat de peix, preparat amb la salsa tipica de romescu, atenció aquest port contenir al·lèrgens amb traces de: Crustacis Ou Cacauets Soja Llet Api Mostassa Sulfits Sèsam Mol·luscs.</p>
-							</div>
-						</div>
-					</div>
-					<div class="col s12 l3">
-						<div class="card">
-							<div class="card-image waves-effect waves-block waves-light">
-							  <img class="activator" src="img/llom_rostit.jpg">
-							</div>
-							<div class="card-content">
-							  <span class="card-title activator grey-text text-darken-4">Llom Rostit<i class="material-icons right">OBRE</i></span>
-							  <p><a href="#">Cistella</a></p>
-							</div>
-							<div class="card-reveal">
-							  <span class="card-title grey-text text-darken-4">Llom Rostit<i class="material-icons right">TANCA</i></span>
-							  <p>Plat molt nutritiu, el llom aromatitzat amb espècies, va acompanyat amb verdures. Pots combinar-lo amb una de les nostres cremes.</p>
-							</div>
-						</div>
-					</div>
-					<div class="col s12 l3">
-						<div class="card">
-							<div class="card-image waves-effect waves-block waves-light">
-							  <img class="activator" src="img/mandonguilles.jpg">
-							</div>
-							<div class="card-content">
-							  <span class="card-title activator grey-text text-darken-4">AMandonguilles<i class="material-icons right">OBRE</i></span>
-							  <p><a href="#">Cistella</a></p>
-							</div>
-							<div class="card-reveal">
-							  <span class="card-title grey-text text-darken-4">Mandonguilles<i class="material-icons right">TANCA</i></span>
-							  <p>Delicios plat tipic de la terra gallega, portat a la teva taula</p>
-							</div>
-						</div>
-					</div>
-					<div class="col s12 l3">
-						<div class="card">
-							<div class="card-image waves-effect waves-block waves-light">
-							  <img class="activator" src="img/lluç_romani.jpg">
-							</div>
-							<div class="card-content">
-							  <span class="card-title activator grey-text text-darken-4">Lluç al Romani<i class="material-icons right">OBRE</i></span>
-							  <p><a href="#">Cistella</a></p>
-							</div>
-							<div class="card-reveal">
-							  <span class="card-title grey-text text-darken-4">Lluç al Romani<i class="material-icons right">TANCA</i></span>
-							  <p>Delicios filet de lluç amb patata, oli de sansa d’oliva, pebrot vermell, pebrot verd, tomàquet, all, vinagre i romaní.</p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		 </li>
-		 <li>
-			<div class="collapsible-header  light-blue"><span class="new badge">3</span><h2>Postres</h2></div>
-			<div class="collapsible-body  light-blue lighten-5">
-			<!-- postres -->
-			<div class="row">
-				<div class="col s12 l3">
-					<div class="card">
-						<div class="card-image waves-effect waves-block waves-light">
-						  <img class="activator" src="img/fruta1.jpg">
-						</div>
-						<div class="card-content">
-						  <span class="card-title activator grey-text text-darken-4">Maduixa, mango , nabius<i class="material-icons right">OBRE</i></span>
-						  <p><a href="#">Cistella</a></p>
-						</div>
-						<div class="card-reveal">
-						  <span class="card-title grey-text text-darken-4">Maduixa, mango , nabius<i class="material-icons right">TANCA</i></span>
-						  <p>Delicios convinat de maduixa, mango i nabius</p>
-						</div>
-					</div>
-				</div>
-				<div class="col s12 l3">
-					<div class="card">
-						<div class="card-image waves-effect waves-block waves-light">
-						  <img class="activator" src="img/fruta2.jpg">
-						</div>
-						<div class="card-content">
-						  <span class="card-title activator grey-text text-darken-4">Fuita del Temps<i class="material-icons right">OBRE</i></span>
-						  <p><a href="#">Cistella</a></p>
-						</div>
-						<div class="card-reveal">
-						  <span class="card-title grey-text text-darken-4">Fruita del Temps<i class="material-icons right">TANCA</i></span>
-						  <p>Una pesa de fruïta del temps</p>
-						</div>
-					</div>
-				</div>
-				<div class="col s12 l3">
-					<div class="card">
-						<div class="card-image waves-effect waves-block waves-light">
-						  <img class="activator" src="img/pastis_kit_kat.jpg">
-						</div>
-						<div class="card-content">
-						  <span class="card-title activator grey-text text-darken-4">Pastis Kit Kat<i class="material-icons right">OBRE</i></span>
-						  <p><a href="#">Cistella</a></p>
-						</div>
-						<div class="card-reveal">
-						  <span class="card-title grey-text text-darken-4">Pastis Kit Kat<i class="material-icons right">TANCA</i></span>
-						  <p>Pastis de la deliciossa chocolata kit kat</p>
-						</div>
-					</div>
-				</div>
-				<div class="col s12 l3">
-					<div class="card">
-						<div class="card-image waves-effect waves-block waves-light">
-						  <img class="activator" src="img/Crumble_poma.jpg">
-						</div>
-						<div class="card-content">
-						  <span class="card-title activator grey-text text-darken-4">Crumble de Poma<i class="material-icons right">OBRE</i></span>
-						  <p><a href="#">Cistella</a></p>
-						</div>
-						<div class="card-reveal">
-						  <span class="card-title grey-text text-darken-4">Crumble de Poma<i class="material-icons right">TANCA</i></span>
-						  <p>Poma cuita amb nabius i cruixent de galeta, civada i canyella.</p>
-						</div>
-					</div>
-				</div>	
-			</div>
-		</li>
-	</ul>
-		
-		
-		
-		<!-- Pie del sitio web -->
-		<footer class="page-footer #ff6f00 amber darken-4">
-          <div class="container">
-            <div class="row">
-              <div class="col l6 s12">
-                <h5 class="white-text">Visita la nostra tenda</h5>
-                <p class="grey-text text-lighten-4">Ens trobaras al c/lleida, 35</p>
-				<img class="responsive-img" src="img/tenda.jpg">
-              </div>
-              <div class="col l4 offset-l2 s12">
-                <h5 class="white-text">Map Site</h5>
-                <ul>
-                  <li><a class="grey-text text-lighten-3" href="inicio.html">Inici</a></li>
-                  <li><a class="grey-text text-lighten-3" href="fotos.html">Fotos</a></li>
-                  <li><a class="grey-text text-lighten-3" href="info.html">Info</a></li>
-                </ul>
->>>>>>> 0137929ebd12c7993ef6e1212191c484dc70b07d
-              </div>
-            </li>
-          </ul>
+                </li>
+            </ul>
+            <!--menu para mobiles -->
+            <ul class="side-nav" id="mobile-demo">
+                <li><a href="#" title="Inicio"><i class="large material-icons">home</i></a></li>
+                <li><a href="#" title="Info"><i class="large material-icons">info</i></a></li>
+                <li><a href="#" title="Contacto"><i class="large material-icons">contacts</i></a></li>
+                <li><a href="#" title="Sing In"><i class="large material-icons">personal_pin</i></a></li>
+                <li><a href="#" title="Cart"><i class="large material-icons">shopping_cart</i></a></li>
+            </ul>
         </div>
     </nav>
     <!--Cuerpo de la pÃ¡gina-->
     <section id="menu" class="purple darken-4">
-      <h1 class="white-text center-align">Menu Diario solo por 9â‚¬</h1>
-      <div id="menuRow" class="row">
-      <!-- cargamos por javascrip su contenido -->
-      </div>
+        <a name="menu"><h1 class="white-text center-align">Menu Diario solo por 9â‚¬</h1></a>
+        <div id="menuRow" class="row">
+            <!-- cargamos por javascrip su contenido -->
+        </div>
     </section>
     <!--ensalada-->
     <section id="ensaladas">
-        <h2 class="black-text center-align  purple lighten-4">Amanidades</h2>
+        <a name="ensaladas"></a><h2 class="black-text center-align  purple lighten-4">Ensaladas</h2>
         <div id="ensaladasRow" class="row">
             <!-- cargamos por javascrip su contenido -->
         </div>
     </section>
-    <!--Principals -->
+    <!--Principales -->
     <section id="principales">
-        <h2 class="black-text center-align  purple lighten-3">Principals</h2>
+        <a name="principales"><h2 class="black-text center-align  purple lighten-3">Principales</h2></a>
         <div id="principalesRow" class="row">
             <!-- cargamos por javascrip su contenido -->
         </div>
     </section>
     <!-- postres -->
     <section id="postres">
-        <h2 class="black-text center-align  purple lighten-2">Postres</h2>
+        <a name="postres"><h2 class="black-text center-align  purple lighten-2">Postres</h2></a>
         <div id="postresRow" class="row">
             <!-- cargamos por javascrip su contenido -->
         </div>
     </section>
+    <!--Bebidas -->
     <section id="bebidas">
-        <h2 class="black-text center-align  purple lighten-1">Bebidas</h2>
+        <a name="bebidas"><h2 class="black-text center-align  purple lighten-1">Bebidas</h2></a>
         <div id="bebidasRow" class="row">
             <!-- cargamos por javascrip su contenido -->
         </div>
     </section>
     <!-- Pie del sitio web -->
-    <footer class="page-footer #ff6f00 purple darken-4">
+    <footer class="page-footer purple darken-4">
         <div class="container">
             <div class="row">
                 <div class="col l6 s12">
                     <h5 class="white-text">Visita la nostra tenda</h5>
-                    <p class="grey-text text-lighten-4">Ens trobaras al c/lleida, 35</p>
+                    <p class="white-text text-lighten-4">Ens trobaras al c/lleida, 35</p>
                     <img class="responsive-img" src="img/tenda.png">
                 </div>
                 <div class="col l4 offset-l2 s12">
                     <h5 class="white-text">Map Site</h5>
                     <ul>
-                        <li><a class="grey-text text-lighten-3" href="inicio.html">Inici</a></li>
+                        <li>
+                          <a class="white-text text-lighten-3" href="inicio.html">Inici</a>
+                        </li>
                         <li><a class="grey-text text-lighten-3" href="fotos.html">Fotos</a></li>
                         <li><a class="grey-text text-lighten-3" href="info.html">Info</a></li>
                     </ul>
+                    <h5 class="white-text">Siguenos</h5>
+                    <a href="#" class="white-text"><i class="fa fa-google-plus-square fa-4x"  aria-hidden="true" style="margin-right:10px;"></i></a>
+                    <a href="#" class="white-text"><i class="fa fa-facebook-square fa-4x"  aria-hidden="true" style="margin-right:10px;"></i></a>
+                    <a href="#" class="white-text"><i class="fa fa-twitter-square fa-4x"  aria-hidden="true" style="margin-right:10px;"></i></a>
+
                 </div>
             </div>
         </div>
@@ -390,9 +133,10 @@
     <!--Import jQuery before materialize.js-->
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script type="text/javascript" src="js/materialize.min.js"></script>
-    <script type="text/javascript" src="Js/funciones/addCarrito.js"></script>
-    <script type="text/javascript" src="Js/funciones/pintaCard.js"></script>
-    <script type="text/javascript" src="Js/funciones/pintaCarrito.js"></script>
+    <script type="text/javascript" src="js/funciones/addCarrito.js"></script>
+    <script type="text/javascript" src="js/funciones/pintaCard.js"></script>
+    <script type="text/javascript" src="js/funciones/pintaCarrito.js"></script>
+    <script type="text/javascript" src="js/funciones/pintaMenu.js"></script>
     <script type="text/javascript" src="js/cargarIndex.js"></script>
 </body>
 

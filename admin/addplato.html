@@ -4,7 +4,7 @@
       <meta charset="UTF-8">
       <!--Let browser know website is optimized for mobile-->
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-      <title>addplato</title>
+      <title>TAKEAWAY</title>
       <!--Import Google Icon Font-->
       <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
       <!--Import materialize.css-->
@@ -16,21 +16,28 @@
       <div id="container">
         <div class="row">
           <div class="col">
-            <h2 class="center">Formulario de creacion de platos</h2>
-            <a class="left" href="home.html"><i class="medium material-icons">web</i></a>
+            <h2 class="center">Formulario de creacion de platos y bebidas</h2>
+            <a class="left" href="lacueva.html"><i class="medium material-icons">web</i></a>
           </div>
         </div>
         <!-- Incluir enctype=�multipart/form-data� para que nos deje subir la imagen al servidor. -->
         <form  id="addPlato" method="post" enctype="multipart/form-data">
           <div class="container" style="margin:50px auto;">
+            <!--creamos el campo nombre del plato-->
             <div class="row">
               <div class="input-field col l12 m12 s12">
-              <!--creamos la entrada de datos del nombre de la categoria-->
-                <input placeholder="Nombre del Plato" id="nombrePlato" type="text" name="nombrePlato" required="">
+                <input placeholder="Nombre del Plato" id="nombrePlato" type="text" name="nombrePlato">
                 <label for="nombre">Plato</label>
               </div>
             </div>
-            <!--creamos la seccion text-area de escriptura de un mensaje-->
+            <!--creamos el campo nombre de la bebida -->
+            <div class="row">
+              <div class="input-field col l12 m12 s12">
+                <input placeholder="Nombre de la bebida" id="nombrebebida" type="text" name="nombrePlato">
+                <label for="nombre">Bebida</label>
+              </div>
+            </div>
+            <!--creamos el campo de descripcion del producto-->
             <div class="row">
               <div class="input-field col s12">
                 <i class="material-icons prefix">mode_edit</i>
@@ -38,7 +45,7 @@
                 <label for="textarea">Decripcion de la categoria</label>
               </div>
             </div>
-            <!-- creamos la seccion input imagen -->
+            <!-- creamos el campo subida de imagen -->
             <div class="row">
               <div class="file-field input-field">
                 <div class="btn waves-effect waves-light grey">
@@ -50,7 +57,7 @@
                 </div>
               </div>
             </div>
-            <!-- creamos la entrada de plato activado -->
+            <!-- creamos el campo activar producto -->
             <div class="row">
               <div class="switch col l4 m4 s12">
                 <label>
@@ -61,9 +68,9 @@
                 </label>
               </div>
               <div class="input-field col l4 m4 s12">
-                <!--creamos la entrada de datos del precio del plato-->
-                <input id="precioRacion" type="number" step="any" name="precioRacion" required="">
-                <label for="precioRacion">Precio por Raci�n</label>
+                <!--creamos el campo precio-->
+                <input id="precio" type="number" step="any" name="precio" required="">
+                <label for="precio">Precio</label>
               </div>
               <div class="input-field col l4 m4 s12">
                 <select id="listado" name="id_categoria">
@@ -86,6 +93,6 @@
               integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
               crossorigin="anonymous"></script>
 		  <script type="text/javascript" src="../js/Materialize/materialize.min.js"></script>
-      <script type="text/javascript" src="../js/lacueva/ddplato.js"></script>
+      <script type="text/javascript" src="../js/lacueva/addplato.js"></script>
     </body>
   </html>
