@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Take Away</title>
     <link rel="stylesheet" href="css/materialize.min.css">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
@@ -15,7 +15,7 @@
 <body>
     <!-- Inicio del nav -->
     <div class="navbar-fixed">
-        <nav >
+        <nav>
             <div id="nav-mobile " class="nav-wrapper  purple darken-4">
                 <!--boton para vista mobil -->
                 <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
@@ -34,7 +34,7 @@
                     <li>
                         <a href="info.html">Info</a>
                     </li>
-                    <li >
+                    <li>
                         <a href="Contacto.html">Contacto</a>
                     </li>
                 </ul>
@@ -49,9 +49,8 @@
                         <a style="position:absolute; color:#fff; top:0; right= 0; z-index: 1000;">
                     ( <span id="hayproducto">0</span> )
                   </a>
-                        <a href="#modal2" id="carrito" class="waves-effect waves-light btn" onclick="pintaCarrito()" style="background-color: transparent;"><i class="material-icons">shopping_cart</i></a>
-                        <div id="modal2" class="modal" style="background-color: #000; color: #FFF;">
-                        </div>
+                        <a href="#modalCarrito"><i class="material-icons">shopping_cart</i></a>
+                        
                     </li>
                 </ul>
                 <!--menu para mobiles -->
@@ -74,7 +73,8 @@
     </section>
     <!--ensalada-->
     <section id="ensaladas">
-        <a name="ensaladas"></a><h2 class="black-text center-align  purple lighten-4">Ensaladas</h2>
+        <a name="ensaladas"></a>
+        <h2 class="black-text center-align  purple lighten-4">Ensaladas</h2>
         <div id="ensaladasRow" class="row">
             <!-- cargamos por javascrip su contenido -->
         </div>
@@ -113,7 +113,7 @@
                     <h5 class="white-text">Map Site</h5>
                     <ul>
                         <li>
-                          <a class="white-text text-lighten-3" href="inicio.html">Inici</a>
+                            <a class="white-text text-lighten-3" href="inicio.html">Inici</a>
                         </li>
                         <li><a class="grey-text text-lighten-3" href="fotos.html">Fotos</a></li>
                         <li><a class="grey-text text-lighten-3" href="info.html">Info</a></li>
@@ -122,7 +122,6 @@
                     <a href="#" class="white-text"><i class="fa fa-google-plus-square fa-4x"  aria-hidden="true" style="margin-right:10px;"></i></a>
                     <a href="#" class="white-text"><i class="fa fa-facebook-square fa-4x"  aria-hidden="true" style="margin-right:10px;"></i></a>
                     <a href="#" class="white-text"><i class="fa fa-twitter-square fa-4x"  aria-hidden="true" style="margin-right:10px;"></i></a>
-
                 </div>
             </div>
         </div>
@@ -139,7 +138,7 @@
     <script type="text/javascript" src="js/funciones/pintaCard.js"></script>
     <script type="text/javascript" src="js/funciones/pintaCarrito.js"></script>
     <script type="text/javascript" src="js/funciones/pintaMenu.js"></script>
-    <script type="text/javascript" src="js/cargarIndex.js"></script>
+    <script type="text/javascript" src="js/IndexScript.js"></script>
 </body>
 
 </html>

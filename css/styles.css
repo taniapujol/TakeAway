@@ -43,14 +43,14 @@
 
 h2, li a.btn-floting, nav>a{
 	text-shadow: 5px 5px 5px rgba(150, 150, 150, 2);
-	background-color:#ffe082;
+	background-color:#f3e5f5;
 
 }
 
 /* menu despegable */
 
 .despegable{
-	width: 100px;
+	width: 75px;
 	position:relative;
 	display:block;
 	background-color: #4a148c;

@@ -1,5 +1,5 @@
 // Creamos la funcion pintaCarrito
-function pintaCarrito(){
+function pintaCarrito(hayCarrito){
   // Declaramos las variables
   var testeo = false;
 	var TotalCantidad = 0;
@@ -23,14 +23,15 @@ function pintaCarrito(){
 			TotalPrecio = TotalPrecio + precio;
 			// Mostramos en el modal lo guardado en localStorage
 			var pintaJson =`
-				<span style="margin:50px;">${cantidad}</span>
-				<span style="margin:50px;">${nombre}</span>
-				<span style="margin:40px;">${precio}</span><br>
+				<tr>
+					<td>${nombre}</td>
+					<td>${cantidad}</td>
+					<td>${precio*cantidad}</td>
+				</tr>
 			`;
 			$("#pintaJson").append(pintaJson);
 		};
-		$("#totalCantidad").append(TotalCantidad);
-		$("#totalPrecio").append(TotalPrecio);
+		
 	} else {
 		$("#modal2").html("No tienes compras");
 	}

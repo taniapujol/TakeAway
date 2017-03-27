@@ -1,7 +1,7 @@
 // Creamos la funcion addCardito() para añadir productos al carrito de la compra.
 function addCarrito(id,cantidad,precio,titulo){
   // Declaramos las variables
-  var testeo = false;
+  	var testeo = false;
 	var existeProducto=false;
   // Obtenemos el contenido de localStorage
   var cartExist=localStorage.getItem("JsonCart");
@@ -19,12 +19,16 @@ function addCarrito(id,cantidad,precio,titulo){
 		if (!existeProduct){
 			cartExist.push({id:id,cantidad:cantidad,precio:precio*cantidad,nombre:titulo});
 		}
+		pintaCarrito(cartExist);
 	} else {
 	//aqui se controla si es la primera vez que se añaden productos al carrito
 	cartExist=[];
 	carExist.push({id:id,cantidad:cantidad,precio:precio*cantidad,titulo:titulo});
+		$('#hayProductos').remove();
+		pintaCarrito(cartExist);
 	}
 	if(testeo) console.log(cartExist);
 	var JsonCart=JSON.stringify(cartExist);
 	localStorage.setItem("JsonCart",JsonCart);
+	localStorage.setItem("Total",totalCart);
 };

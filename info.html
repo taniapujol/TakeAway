@@ -1,55 +1,109 @@
 <!DOCTYPE html>
-  <html>
-    <head>
-      <!--Import Google Icon Font-->
-      <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-      <!--Import materialize.css-->
-      <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+<html>
 
-      <!--Let browser know website is optimized for mobile-->
-      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    </head>
+<head>
+    <meta charset="utf-8">
+    <!--lanzamos la tencion de la vista para mobiles, etc,-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formularios en Materialize</title>
+    <!--Importamos Google Icon Font y font aweson-->
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <!--Importamos el estilo materialize.css-->
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+</head>
 
-    <body>
-		<!--Import jQuery before materialize.js-->
-		<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-		<script type="text/javascript" src="js/materialize.min.js"></script>
-		<!-- Empezamos con el cuerpo de la página -->
-		<!-- barra de navegación del sitio -->
-		<nav>
-			<div class="nav-wrapper #ff6f00 amber darken-4">
-				<a href="#" class="brand-logo">Logo</a>
-				<ul id="nav-mobile" class="right hide-on-med-and-down">
-					<li><a href="inicio.html">Inicio</a></li>
-					<li><a href="info.html">info</a></li>
-					<li><a href="fotos.html">Fotos</a></li>
-				</ul>
-			</div>
-		</nav>
-		<!-- Pie del sitio web -->
-		<footer class="page-footer">
-          <div class="container">
-            <div class="row">
-              <div class="col l6 s12">
-                <h5 class="white-text">Footer Content</h5>
-                <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
-              </div>
-              <div class="col l4 offset-l2 s12">
-                <h5 class="white-text">Map Site</h5>
-                <ul>
-                  <li><a class="grey-text text-lighten-3" href="inicio.html">Link 1</a></li>
-                  <li><a class="grey-text text-lighten-3" href="fotos.html">Link 2</a></li>
-                  <li><a class="grey-text text-lighten-3" href="info.html">Link 3</a></li>
-                </ul>
-              </div>
-            </div>
+<body>
+    <!-- Inicio del nav -->
+    <div class="navbar-fixed">
+      <nav>
+        <div id="nav-mobile " class="nav-wrapper  purple darken-4">
+          <!--boton para vista mobil -->
+          <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+          <!-- cargando menu izquierdo (Inicio, Info, Contacto) -->
+          <ul class="left hide-on-med-and-down">
+            <li class="despegable">
+              <a href="index.html">Inicio</a>
+              <ul class="submenu">
+                  <li><a href="#menu">Menu</a></li>
+                  <li><a href="#ensaladas">Ensaladas</a></li>
+                  <li><a href="#principales">Principales</a></li>
+                  <li><a href="#postres">Postres</a></li>
+                  <li><a href="#bebidas">Bebidas</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="info.html">Info</a>
+            </li>
+            <li>
+              <a href="Contacto.html">Contacto</a>
+            </li>
+          </ul>
+          <!-- Cargando el logo en el centro de la pÃ¡gina  -->
+          <a href="#" class="brand-logo center"><img src="img/takeaway.png"></a>
+          <!-- Cargando el menu izquierdo (sing in, carrito) -->
+          <ul class="right hide-on-med-and-down">
+              <li>
+                <a href="#"> Sing in </a>
+              </li>
+              <li>
+                <a style="position:absolute; color:#fff; top:0; right= 0; z-index: 1000;">
+              ( <span id="hayproducto">0</span> )
+                </a>
+                <a href="#modal2" id="carrito" class="waves-effect waves-light btn" onclick="pintaCarrito()" style="background-color: transparent;"><i class="material-icons">shopping_cart</i></a>
+                <div id="modal2" class="modal" style="background-color: #000; color: #FFF;">
+                </div>
+              </li>
+          </ul>
+          <!--menu para mobiles -->
+          <ul class="side-nav" id="mobile-demo">
+            <li><a href="#" title="Inicio"><i class="large material-icons">home</i></a></li>
+            <li><a href="#" title="Info"><i class="large material-icons">info</i></a></li>
+            <li><a href="#" title="Contacto"><i class="large material-icons">contacts</i></a></li>
+            <li><a href="#" title="Sing In"><i class="large material-icons">personal_pin</i></a></li>
+            <li><a href="#" title="Cart"><i class="large material-icons">shopping_cart</i></a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <!-- Creamos el contenido de la pÃ¡gina -->
+    
+    <!-- Empezamos el pie de la pagina -->
+    <footer class="page-footer purple darken-4">
+      <div class="container">
+        <div class="row">
+          <div class="col l6 s12">
+              <h5 class="white-text">Visita la nostra tenda</h5>
+              <p class="white-text text-lighten-4">Ens trobaras al c/lleida, 35</p>
+              <img class="responsive-img" src="img/tenda.png">
           </div>
-          <div class="footer-copyright">
-            <div class="container">
-             Todos los derechos reservados © 2017 Copyright
-            <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
-            </div>
+          <div class="col l4 offset-l2 s12">
+            <h5 class="white-text">Map Site</h5>
+            <ul>
+                <li>
+                    <a class="white-text text-lighten-3" href="inicio.html">Inici</a>
+                </li>
+                <li><a class="grey-text text-lighten-3" href="fotos.html">Fotos</a></li>
+                <li><a class="grey-text text-lighten-3" href="info.html">Info</a></li>
+            </ul>
+            <h5 class="white-text">Siguenos</h5>
+            <a href="#" class="white-text"><i class="fa fa-google-plus-square fa-4x"  aria-hidden="true" style="margin-right:10px;"></i></a>
+            <a href="#" class="white-text"><i class="fa fa-facebook-square fa-4x"  aria-hidden="true" style="margin-right:10px;"></i></a>
+            <a href="#" class="white-text"><i class="fa fa-twitter-square fa-4x"  aria-hidden="true" style="margin-right:10px;"></i></a>
           </div>
-        </footer>
-    </body>
-  </html>
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <div class="container">
+            Todos los derechos reservados ï¿½ 2017 Copyright
+        </div>
+      </div>
+    </footer>
+    <!--Importamos jQuery desde materialize.js-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="js/Materialize/materialize.min.js"></script>
+    <script type="text/javascript" src="js/contactoscript.js"></script>
+</body>
+
+</html>
