@@ -17,10 +17,11 @@ $(document).ready(function() {
 			hayCarrito =JSON.parse(hayCarrito);
 			$('#hayProductos').remove();
 			pintaCarrito(hayCarrito);
+      addTotal();
 		}
     // Cargamos ajax para obterner las variables nombre, descripcion, precio y categoria llamando a la base de datos por php.
     $.ajax({
-        url: 'php/ajaxIndex.php', // llama al php que controlo la base de datos 'platos'.
+        url: 'php/ajaxIndex.php', // llama al php que controlo la base de datos 'platos' y 'bebidas'.
         type: 'GET',
         dataType: 'json',
         success: function(result) {
@@ -35,13 +36,13 @@ $(document).ready(function() {
               var categoria = v.id_categoria;
               pintaCard(id,nombre, precio, descripcion, foto, categoria);
             });
+            if (testeo) console.log(result.query_bebi);
             $.each(result.query_bebi, function(k, v) {
               var id = v.id;
               var nombre = v.nombreBebida;
               var precio = v.precio;
               var foto = v.foto;
               var categoria = v.id_categoria;
-              if (testeo) console.log(id,nombre,precio,foto,categoria);
               pintaCard(id,nombre, precio, "Lata o Botella de bebida", foto, categoria);
             });
         },

@@ -5,6 +5,7 @@ function pintaCard(id,titulo, precio, descripcion, img, cat) {
     var precio = precio;
     var descripcion = descripcion;
     var img = img;
+    var cat = cat;
 	var card = `
 		<div class="col s6 m4 l3">
 			<div class="card">
@@ -19,10 +20,10 @@ function pintaCard(id,titulo, precio, descripcion, img, cat) {
 									<i class="material-icons">shopping_basket</i>
 								</a>
 								<ul>
-									<li><a onclick="addCarrito(${id},1,${precio},'${titulo}')" class="btn-floating red">x1</a></li>
-									<li><a onclick="addCarrito(${id},2,${precio},'${titulo}')" class="btn-floating yellow darken-1">x2</a></li>
-									<li><a onclick="addCarrito(${id},3,${precio},'${titulo}')" class="btn-floating green">x3</a></li>
-									<li><a onclick="addCarrito(${id},4,${precio},'${titulo}')" class="btn-floating blue">x4</a></li>
+									<li><a onclick="addCarrito(${id},1,${precio},'${titulo}','${cat}')" class="btn-floating red">x1</a></li>
+									<li><a onclick="addCarrito(${id},2,${precio},'${titulo}','${cat}')" class="btn-floating yellow darken-1">x2</a></li>
+									<li><a onclick="addCarrito(${id},3,${precio},'${titulo}','${cat}')" class="btn-floating green">x3</a></li>
+									<li><a onclick="addCarrito(${id},4,${precio},'${titulo}','${cat}')" class="btn-floating blue">x4</a></li>
 								</ul>
 							</div>
 				</div>
