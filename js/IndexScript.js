@@ -2,16 +2,22 @@
 $(document).ready(function() {
 	// Declaramos una variable
 		var testeo = true;
+		var hayCarrito =localStorage.getItem('JsonCart');
 	// cargamos la funcion modal del materialize
     $('.modal').modal();
-    $('#modal1').modal('open');
-    $('modal2').modal('open');
+		$('#modalNewslleter')
     $(".button-collapse").sideNav({
       menuWidth: 100, // Default is 300
       edge: 'left', // Choose the horizontal origin
       closeOnClick: true, // Closes side-nav on <a> clicks, useful for Angular/Meteor
       draggable: true // Choose whether you can drag to open on touch screens
     });
+		// actualizamos si el carrito si exite alguno en localStorage
+		if (hayCarrito!=null){
+			hayCarrito =JSON.parse(hayCarrito);
+			$('#hayProductos').remove();
+			pintaCarrito(hayCarrito);
+		}
     // Cargamos ajax para obterner las variables nombre, descripcion, precio y categoria llamando a la base de datos por php.
     $.ajax({
         url: 'php/ajaxIndex.php', // llama al php que controlo la base de datos 'platos'.

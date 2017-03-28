@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,7 +10,6 @@
     <link rel="stylesheet" type="text/css" href="css/styles.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
-
 <body>
     <!-- Inicio del nav -->
     <div class="navbar-fixed">
@@ -46,11 +44,10 @@
                         <a href="#"> Sing in </a>
                     </li>
                     <li>
-                        <a style="position:absolute; color:#fff; top:0; right= 0; z-index: 1000;">
-                    ( <span id="hayproducto">0</span> )
-                  </a>
-                        <a href="#modalCarrito"><i class="material-icons">shopping_cart</i></a>
-                        
+                      <a>( <span id="tCantidad">0</span> )</a>
+                    </li>
+                    <li>
+                      <a href="#modalCarrito"><i class="material-icons">shopping_cart</i></a>
                     </li>
                 </ul>
                 <!--menu para mobiles -->
@@ -131,13 +128,47 @@
             </div>
         </div>
     </footer>
-    <!--Import jQuery before materialize.js-->
+    <!-- Estructuras de los modals de la pagina  -->
+    <!-- Modal Structure newsletter -->
+      <div id="modalNewslleter" class="modal">
+        <div class="modal-content">
+          <h4>sssSuscríbete a nuestra Newsletter</h4>
+          <form method="post" action="php/recibeNewletter.php">
+    	  <div class="input-field">
+    		<input maxlenght="100" type="email" name="email" id="email">
+    		<label for="email">Tu correo</label>
+    	  </div>
+    		<button class="btn waves-effect waves-light" type="submit">Suscribirme</button>
+    	  </form>
+        </div>
+        <div class="modal-footer">
+          <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Cerrar</a>
+        </div>
+      </div>
+      <!-- Modal Structure carrito -->
+      <div id="modalCarrito" class="modal">
+        <div class="modal-content">
+          <h4>Resumen Carrito</h4>
+          <p id="hayProductos" class="center-align">No tienes productos en el carrito</p>
+          <table id="resProducts">
+
+          </table>
+        </div>
+        <div class="modal-footer">
+          <a href="checkout.html" class="btn waves-effect btn-flat purple darken-4 left white-text" style="margin-right:10px;">Pasar por caja</a>
+          <a onclick="borrarCarrito()" class="btn waves-effect btn-flat purple darken-4 left white-text"><i class="material-icons">delete</i></a>
+
+          <a href="#!" class="modal-action modal-close btn waves-effect btn-flat purple darken-4 white-text">Cerrar</a>
+        </div>
+      </div>
+    <!--Import jQuery -->
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script type="text/javascript" src="js/Materialize/materialize.min.js"></script>
     <script type="text/javascript" src="js/funciones/addCarrito.js"></script>
+    <script type="text/javascript" src="js/funciones/borrarCarrito.js"></script>
     <script type="text/javascript" src="js/funciones/pintaCard.js"></script>
     <script type="text/javascript" src="js/funciones/pintaCarrito.js"></script>
-    <script type="text/javascript" src="js/funciones/pintaMenu.js"></script>
+    <!-- <script type="text/javascript" src="js/funciones/pintaMenu.js"></script> -->
     <script type="text/javascript" src="js/IndexScript.js"></script>
 </body>
 
