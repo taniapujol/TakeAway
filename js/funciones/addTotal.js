@@ -2,7 +2,7 @@ function addTotal(){
 	// declacracion de variables
 	var haycarrito = localStorage.getItem('JsonCart');
 	var tCantidad = 0;
-	var testeo = true;
+	var testeo = false;
 	// Miramos si exite en localStorage un carrito guardado. Si se encuentra bacio obtentra el valor de tcantidad sino se le sumara la cantidad total del carrito.
 	if ( haycarrito != null){
 		haycarrito=JSON.parse(haycarrito);
@@ -16,6 +16,6 @@ function addTotal(){
 		$("#tCantidad").text(' ');
 		$("#tCantidad").text(tCantidad);
 	}
-	
+
 // fin de funcion
 };

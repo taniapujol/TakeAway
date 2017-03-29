@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      <title>TAKEAWAY</title>
+      <!--Import Google Icon Font-->
+      <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!--Import materialize.css-->
+      <link type="text/css" rel="stylesheet" href="../css/materialize.min.css"  media="screen,projection"/>
+      <link rel="stylesheet" href="../css/style_backoffice.css">
+    </head>
+    <body style="height: auto;">
+    <!-- Empezamos a crear el back office de la p�gina -->
+      <div id="container">
+        <div class="row">
+          <div class="col">
+            <h2 class="center">Formulario de creacion del Menu Diario</h2>
+            <a class="left" href="lacueva.html"><i class="medium material-icons">web</i></a>
+          </div>
+        </div>
+        <!-- Incluir enctype=�multipart/form-data� para que nos deje subir la imagen al servidor. -->
+        <form  id="addPlato" method="post" enctype="multipart/form-data">
+          <div class="container" style="margin:50px auto;">
+            <!--creamos el campo nombre del plato-->
+            <div class="row">
+              <div class="input-field col l12 m12 s12">
+                <input placeholder="Nombre del Plato" id="nombrePlato" type="text" name="nombrePlato">
+                <label for="nombre">Plato</label>
+              </div>
+            </div>
+            <!--creamos el campo de descripcion del producto-->
+            <div class="row">
+              <div class="input-field col s12">
+                <i class="material-icons prefix">mode_edit</i>
+                <textarea id="textarea" class="materialize-textarea" name="descripcion"></textarea>
+                <label for="textarea">Decripcion de la categoria</label>
+              </div>
+            </div>
+            <!-- creamos el campo subida de imagen -->
+            <div class="row">
+              <div class="file-field input-field">
+                <div class="btn waves-effect waves-light grey">
+                  <span>Archivo</span>
+                  <input type="file" id="imagen" sixe="30" name="foto">
+                </div>
+                <div class="file-path-wrapper">
+                  <input class="file-path validate">
+                </div>
+              </div>
+            </div>
+            <!-- creamos el campo activar producto -->
+            <div class="row">
+              <div class="switch col l4 m4 s12">
+                <label>
+                  Off
+                  <input type="checkbox" name="activado">
+                  <span class="lever"></span>
+                  On
+                </label>
+              </div>
+              <div class="input-field col l4 m4 s12">
+                <!--creamos el campo precio-->
+                <input id="precio" type="number" step="any" name="precioRacion" required="">
+                <label for="precio">Precio</label>
+              </div>
+              <div class="input-field col l4 m4 s12">
+                <select id="listado" name="id_categoria">
+                  <option value="" disabled selected>Elige una opcion</option>
+                </select>
+                <label>Selecciona una Categoria</label>
+              </div>
+            </div>
+            <button class="btn waves-effect waves-light grey" type="submit" name="action">Enviar
+              <i class="material-icons right">send</i>
+            </button>
+            <button class="btn waves-effect waves-light grey" type="button" name="nuevaEntrada" onclick="window.location.reload()" style="margin-right: 20px;"><i class="material-icons right">mode_edit</i> Nuevo Plato
+            </button>
+          </div>
+        </form>
+      </div>
+
+  	<!--Import jQuery before materialize.js-->
+		  <script src="https://code.jquery.com/jquery-3.1.1.js"
+              integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
+              crossorigin="anonymous"></script>
+		  <script type="text/javascript" src="../js/Materialize/materialize.min.js"></script>
+      <script type="text/javascript" src="../js/lacueva/addplato.js"></script>
+    </body>
+  </html>

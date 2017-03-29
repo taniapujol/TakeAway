@@ -1,12 +1,12 @@
 // creamos la funcion que pintara las cards de nuestro menus principal en la secciones indicadas.
 function pintaCard(id,titulo, precio, descripcion, img, cat) {
-
+    // declaraciones de variables, enlazadas con las pasadas
     var titulo = titulo;
     var precio = precio;
     var descripcion = descripcion;
     var img = img;
     var cat = cat;
-	var card = `
+	  var card = `
 		<div class="col s6 m4 l3">
 			<div class="card">
 				<div class="card-image waves-effect waves-block waves-light">
@@ -34,6 +34,7 @@ function pintaCard(id,titulo, precio, descripcion, img, cat) {
 			</div>
 		</div>
 		`;
+    // Pintamos las cards segun su categoria
     switch (cat){
 		case "2" :
 			$("#ensaladasRow").append(card);

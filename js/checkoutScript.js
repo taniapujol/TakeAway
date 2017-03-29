@@ -7,6 +7,7 @@ $(document).ready(function(){
     hayCarrito=JSON.parse(hayCarrito);
     $('#hayProductos').remove();
     $("#btnPay").show();
+    $("#btnSeguir").show();
     pintaCarrito(hayCarrito);
   }
   // Enviamos los datos al php al hacer clic en pagar compra

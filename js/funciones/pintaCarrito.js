@@ -23,9 +23,10 @@ function pintaCarrito(hayCarrito){
 					<td>${nombre}</td>
 					<td>${precio}</td>
 					<td>${precio*cantidad}</td>
+					<td><button onclick="borrarLineaCarrito(${id})"><i class="fa fa-minus-circle" aria-hidden="true"></i></button></td>
 				</tr>
 			`;
-   
+
 		$("#resProducts").append(rowProduct);
 	};//Fin del for
 	if (hayCarrito != null){
@@ -34,7 +35,7 @@ function pintaCarrito(hayCarrito){
         	<td colspan="3">Precio Total = ${TotalPrecio}</td>
       	</tr>
       	`;
-    $("#resProducts").append(rowPrecio);	
+    $("#resProducts").append(rowPrecio);
 	}
 // fin de funcion
 };

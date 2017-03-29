@@ -1,3 +1,3 @@
 function borrarCarrito() {
   localStorage.clear();
-}
+};
